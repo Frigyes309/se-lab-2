@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class TorpedoStoreTest {
 
   @Test
-  void fire_Success(){
+  void fire_Success() {
     // Arrange
     TorpedoStore store = new TorpedoStore(1);
 
@@ -16,5 +16,17 @@ class TorpedoStoreTest {
 
     // Assert
     assertEquals(true, result);
+  }
+
+  @Test
+  void fire_Fail() {
+    // Arrange
+    TorpedoStore store = new TorpedoStore(1, 1.0);
+
+    // Act
+    boolean result = store.fire(1);
+
+    // Assert
+    assertEquals(false, result);
   }
 }
